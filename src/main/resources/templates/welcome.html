@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+</head>
+<body>
+<h1 th:text="'Welcome ' + ${name} + '!!'"></h1>
+<p><a href="/list-todos">Click here</a> to manage your todos</p>
+<h3><a href="/logout"> LOGOUT </a></h3>
+</body>
+</html>

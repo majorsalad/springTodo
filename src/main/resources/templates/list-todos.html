@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title  th:text="${name} + 's Todo Page'"></title>
+</head>
+<body>
+    <h1>Your Todos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Is it Done?</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr th:each="todo : ${todos}">
+                    <td th:text="${todo.desc}"></td>
+                    <td th:text="${todo.isDone}"></td>
+                    <td><a type="button" th:href="@{/update-todos(id=${todo.id})}">Update</a></td>
+                    <td><a type="button" th:href="@{/delete-todos(id=${todo.id})}">Delete</a></td>
+                </tr>
+        </tbody>
+    </table>
+<a href="/add-todo">Add Todo</a>
+</body>
+</html>

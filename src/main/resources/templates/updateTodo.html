@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Todos Page</title>
+</head>
+<body>
+<h1>UPDATE Todo Page for</h1>
+<p th:text="${name}"></p>
+<form method="POST" th:object="${todo}">
+        Description <input name="desc" type="text" th:value="*{desc}" required="required"/>
+                    <input type="hidden" name="id" th:value="*{id}">
+                    <input type="hidden" name="isDone" th:value="*{isDone}">
+                    <input type="hidden" name="user" th:value="*{user}">
+    <input type="submit">
+</form>
+</body>
+</html>
